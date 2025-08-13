@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services — Visual Orbit</title>
+  
+  <!-- Index page CSS for header/footer -->
+  <link rel="stylesheet" href="home.css">
+  
+  <!-- Services CSS for service cards -->
+  <link rel="stylesheet" href="services.css">
+  
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER (from index.html) -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Visual Orbit</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="btn-ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <p class="section-subtitle">We provide top-notch solutions to boost your business growth.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <h3>Creative Design</h3>
+          <p>Modern, user-friendly, and visually appealing designs to make your brand stand out.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📸</div>
+          <h3>Content & ads </h3>
+          <p>Engaging, conversion-driven content and ads crafted to capture attention and deliver results.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🖥️</div>
+          <h3>Web Development</h3>
+          <p>High-performance, responsive websites built with the latest technologies.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Digital Marketing</h3>
+          <p>Boost your online presence with targeted strategies and SEO optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (from index.html) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <h3>Visual Orbit</h3>
+        <p>Creative design & development that grows your brand.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/visualorbit.media" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Visual Orbit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Service card scroll animation -->
+  <script>
+    const cards = document.querySelectorAll(".service-card");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
