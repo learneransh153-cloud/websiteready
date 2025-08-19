@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Header (common) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container">
       <a class="logo" href="index.html">Visual Orbit</a>
@@ -50,11 +50,10 @@
       </form>
       <p id="status"></p>
     </div>
-    
   </section>
 
-  <!-- Footer (common) -->
- <footer class="site-footer">
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="container footer-grid">
 
       <div class="footer-brand">
@@ -93,139 +92,16 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("gC4FBj7s3jwO2RF2R"); // 🔹 yaha apna PUBLIC KEY daal
+      emailjs.init("gC4FBj7s3jwO2RF2R"); // ✅ yaha apna PUBLIC KEY daal
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Pehle admin ko email
-      emailjs.sendForm("<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="contact.css">
-</head>
-<body>
-
-  <!-- Header (common) -->
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">Visual Orbit</a>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html" class="btn-ghost">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Contact Section -->
-  <section class="contact-section">
-    <div class="contact-info">
-      <h2>Get in Touch</h2>
-      <p>We would love to hear from you! Reach out through any of the methods below.</p>
-      <ul>
-        <li><strong>📍 Address:</strong> Vishnupuri Indore M.P. India</li>
-        <li><strong>📞 Phone:</strong> +91 8770635893</li>
-        <li><strong>📧 Email:</strong> visualorbitagy@gmail.com</li>
-      </ul>
-      <div class="social-links">
-        <a href="#">🌐</a>
-        <a href="#">📸</a>
-        <a href="#">💼</a>
-      </div>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="contact-form">
-      <h2>Send Us a Message</h2>
-      <form id="contact-form">
-        <input type="text" name="user_name" placeholder="Your Name" required>
-        <input type="email" name="user_email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <p id="status"></p>
-    </div>
-    
-  </section>
-
-  <!-- Footer (common) -->
- <footer class="site-footer">
-    <div class="container footer-grid">
-
-      <div class="footer-brand">
-        <h3>Visual Orbit</h3>
-        <p>Creative design & development that grows your brand.</p>
-      </div>
-
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/visualorbit.media" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Visual Orbit. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- EmailJS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("gC4FBj7s3jwO2RF2R"); // 🔹 yaha apna PUBLIC KEY daal
-    })();
-
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      // Pehle admin ko email
-      emailjs.sendForm("service_buyg8k6", "template_e62d83j", this)
-        .then(() => {
-          // Fir visitor ko auto reply
-          return emailjs.sendForm("service_buyg8k6", "TEMPLATE_ID_VISITOR", this);
-        })
+      emailjs.sendForm("service_buyg8k6", "template_e62d83j", this) // ✅ apna SERVICE ID & TEMPLATE ID daal
         .then(() => {
           document.getElementById("status").innerText = "✅ Message sent successfully!";
-          document.getElementById("contact-form").reset();
-        }, (error) => {
-          document.getElementById("status").innerText = "❌ Failed to send: " + error.text;
-        });
-    });
-  </script>
-
-</body>
-</html>
-", "TEMPLATE_ID_ADMIN", this)
-        .then(() => {
-          // Fir visitor ko auto reply
-          return emailjs.sendForm("YOUR_SERVICE_ID", "TEMPLATE_ID_VISITOR", this);
-        })
-        .then(() => {
-          document.getElementById("status").innerText = "✅ Message sent successfully!";
-          document.getElementById("contact-form").reset();
+          this.reset();
         }, (error) => {
           document.getElementById("status").innerText = "❌ Failed to send: " + error.text;
         });
