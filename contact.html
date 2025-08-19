@@ -93,7 +93,7 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("YOUR_PUBLIC_KEY"); // 🔹 yaha apna PUBLIC KEY daal
+      emailjs.init("gC4FBj7s3jwO2RF2R"); // 🔹 yaha apna PUBLIC KEY daal
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -195,17 +195,17 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("YOUR_PUBLIC_KEY"); // 🔹 yaha apna PUBLIC KEY daal
+      emailjs.init("gC4FBj7s3jwO2RF2R"); // 🔹 yaha apna PUBLIC KEY daal
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
       // Pehle admin ko email
-      emailjs.sendForm("YOUR_SERVICE_ID", "TEMPLATE_ID_ADMIN", this)
+      emailjs.sendForm("service_buyg8k6", "template_e62d83j", this)
         .then(() => {
           // Fir visitor ko auto reply
-          return emailjs.sendForm("YOUR_SERVICE_ID", "TEMPLATE_ID_VISITOR", this);
+          return emailjs.sendForm("service_buyg8k6", "TEMPLATE_ID_VISITOR", this);
         })
         .then(() => {
           document.getElementById("status").innerText = "✅ Message sent successfully!";
