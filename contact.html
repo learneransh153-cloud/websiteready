@@ -92,13 +92,13 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("gC4FBj7s3jwO2RF2R"); // ✅ tumhara PUBLIC KEY
+      emailjs.init("gC4FBj7s3jwO2RF2R"); // ✅ Public Key
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      emailjs.sendForm("service_buyg8k6", "template_js7dmop", this) // ✅ sahi Service & Template ID
+      emailjs.sendForm("service_buyg8k6", "template_js7dmop", this) // ✅ Service ID & Template ID
         .then(() => {
           document.getElementById("status").innerText = "✅ Message sent successfully!";
           this.reset();
